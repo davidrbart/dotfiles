@@ -1,0 +1,86 @@
+initialZoom page
+psFile "| lpr"
+psPaperSize match
+textEncoding UTF-8
+urlCommand "chrome '%s'"
+
+unbind mousePress1 any
+unbind mousePress2 any
+unbind mousePress3 any
+unbind mousePress4 any
+unbind mousePress5 any
+unbind mousePress6 any
+unbind mousePress7 any
+unbind mouseRelease1 any
+unbind mouseRelease2 any
+
+unbind + any
+unbind - any
+unbind 0 any
+unbind ? any
+unbind F any
+unbind N scrLockOff
+unbind N scrLockOn
+unbind O any
+unbind P scrLockOff
+unbind P scrLockOn
+unbind Q any
+unbind R any
+unbind alt-f any
+unbind b any
+unbind backspace any
+unbind ctrl-end any
+unbind ctrl-f any
+unbind ctrl-g any
+unbind ctrl-home any
+unbind ctrl-l any
+unbind ctrl-p any
+unbind ctrl-w any
+unbind delete any
+unbind down any
+unbind end any
+unbind f any
+unbind g any
+unbind home any
+unbind left any
+unbind n scrLockOff
+unbind n scrLockOn
+unbind o any
+unbind p scrLockOff
+unbind p scrLockOn
+unbind pgdn any
+unbind pgup any
+unbind q any
+unbind r any
+unbind right any
+unbind space any
+unbind up any
+unbind v any
+unbind w any
+unbind z any
+
+bind mousePress1 any startSelection
+bind mouseRelease1 any endSelection followLinkNoSel
+
+bind + any zoomIn
+bind - any zoomOut
+bind / any find
+bind = any zoomFitPage
+bind ? any about
+bind G any gotoLastPage
+bind alt-h any scrollLeft(16)
+bind alt-j any scrollDown(16)
+bind alt-k any scrollUp(16)
+bind alt-l any scrollRight(16)
+bind f any toggleFullScreenMode
+bind g any gotoPage(1)
+bind h any goBackward
+bind j any nextPage
+bind k any prevPage
+bind l any goForward
+bind n any findNext
+bind o any open
+bind p any print
+bind q any quit
+bind r any reload
+bind z any zoomPercent(100)

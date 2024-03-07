@@ -1,0 +1,20 @@
+unbind-mouse all
+unbind-key all
+
+bind-key 4-Return 'xterm'
+bind-key 4-BackSpace menu-exec
+bind-key 4-f window-fullscreen
+bind-key 4-j window-cycle
+bind-key 4-k window-rcycle
+bind-key 4-l lock
+bind-key 4-m window-maximize
+bind-key 4-q window-close
+bind-key 4-r restart
+bind-key 4S-q quit
+
+borderwidth 0
+fontname "monospace:pixelsize=13"
+color font "#151515"
+color selfont "#d0d0d0"
+color menubg "#d0d0d0"
+color menufg "#151515"

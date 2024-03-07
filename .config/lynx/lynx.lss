@@ -1,0 +1,51 @@
+em:normal:default
+strong:normal:default
+b:normal:default
+i:normal:default
+a:normal:default
+img:normal:default
+fig:normal:default
+caption:normal:default
+hr:normal:default
+blockquote:normal:default
+ul:normal:default
+address:normal:default
+title:normal:default
+tt:normal:default
+h1:normal:default
+label:normal:default
+q:normal:default
+small:normal:default
+big:normal:default
+sup:normal:default
+sub:normal:default
+li:normal:default
+code:normal:default
+cite:normal:default
+table:normal:default
+tr:normal:default
+td:normal:default
+br:normal:default
+
+# Special styles - not corresponding directly to HTML tags
+#alert- status bar, when message begins "Alert".
+#alink- active link
+#normal- default attributes
+#status- status bar
+#whereis- whereis search target
+#
+#normal:normal:default:blue
+alink:normal:blue
+status:normal:default
+alert:normal:default
+whereis:normal:default
+
+menu.bg:normal:black:lightgray
+menu.frame:normal:black:lightgray
+menu.entry:normal:lightgray:black
+menu.n:normal:red:gray
+menu.active:normal:yellow:black
+menu.sb:normal:brightred:lightgray
+
+# Special handling for link.
+link:normal:default
