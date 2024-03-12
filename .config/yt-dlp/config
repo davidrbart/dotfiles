@@ -1,0 +1,6 @@
+--audio-quality '10'
+--audio-format 'wav'
+-f '303'
+-o '%(release_date)s_%(title)s.%(ext)s'
+--restrict-filenames
+--prefer-free-formats
