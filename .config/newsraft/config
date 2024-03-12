@@ -1,0 +1,37 @@
+set color-list-feed-unread-fg default
+set color-list-item-important-fg default
+set color-list-item-unread-fg default
+set color-list-section-unread-fg default 
+set color-status-fail-fg default
+set color-status-good-fg default
+set color-status-info-fg default
+set color-status-info-fg default
+set content-date-format %d. %B %Y
+
+unbind KEY_DOWN
+unbind KEY_UP
+unbind space
+unbind ^F
+unbind KEY_NPAGE
+unbind ^B
+unbind KEY_PPAGE
+unbind KEY_HOME
+unbind n
+unbind N
+unbind p
+unbind P
+unbind ^J
+unbind KEY_RIGHT
+unbind KEY_ENTER
+unbind ^R
+unbind ^D
+unbind c
+unbind q
+unbind KEY_LEFT
+unbind KEY_BACKSPACE
+unbind Q
+
+bind q quit-hard
+bind n select-next-page
+bind p select-prev-page
+bind R reload-all

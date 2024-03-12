@@ -1,0 +1,19 @@
+source $HOME/.config/mutt/mail
+
+set header_cache        = $HOME/.cache/mutt/
+set history_file        = $HOME/.cache/mutt-history
+
+alternative_order       text/plain text/enriched text/html auto_view text/html
+
+set abort_nosubject     = yes
+set beep                = no
+set delete              = yes
+set history_remove_dups = yes
+set prompt_after        = no
+set date_format         = '%d.%m %H:%M'
+set index_format        = '%d  %Z  %-32.32L %s'
+set status_format       = '%f  %u/%m'
+set ssl_starttls        = no
+
+color normal black white
+color indicator white black
