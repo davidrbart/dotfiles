@@ -13,7 +13,7 @@ bind-key 4-r restart
 bind-key 4S-q quit
 
 borderwidth 0
-fontname "monospace:pixelsize=13"
+fontname "monospace:pixelsize=10"
 color font "#151515"
 color selfont "#d0d0d0"
 color menubg "#d0d0d0"
