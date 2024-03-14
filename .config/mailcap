@@ -1,0 +1,2 @@
+application/pdf; xpdf -fullscreen -remote local -raise -cfg ~/.config/xpdf/rc %s
+text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -collapse_br_tags -dump %s; copiousoutput

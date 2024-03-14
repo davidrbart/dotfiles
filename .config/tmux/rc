@@ -1,0 +1,54 @@
+set -g automatic-rename off
+set -g base-index 1
+set -g buffer-limit 10240
+set -g default-terminal 'tmux-256color'
+set -g display-time 0
+set -g escape-time 0
+set -g history-file $HOME/.cache/tmux_history
+set -g message-style 'fg=default,bg=default'
+set -g pane-active-border-style 'fg=white,bg=default'
+set -g pane-base-index 1
+set -g pane-border-format '#[align=centre]#{?pane_active,#[fg=white#,bg=black],#[fg=black]} #{pane_index} #[fg=white]'
+set -g pane-border-indicators off
+set -g pane-border-status top
+set -g pane-border-style 'fg=white,bg=default'
+set -g popup-border-lines none
+set -g prefix F1
+set -g prefix2 C-Space
+set -g renumber-windows on
+set -g status-interval 1
+set -g status-position top
+set -g status-right '%H:%M'
+set -g status-style 'fg=default,bg=default'
+
+unbind -a
+unbind -a -T root
+unbind -a -T copy-mode
+unbind -a -T copy-mode-vi
+
+bind F1 source $HOME/.config/tmux/rc
+bind C-Space send-prefix -2
+bind Space rotatew
+bind : command-prompt
+bind ? lsk
+bind A splitw -h
+bind a neww
+bind q killp
+bind h selectp -L
+bind j next
+bind k prev
+bind l selectp -R
+bind r command-prompt -I '#W' 'renamew "%1"'
+bind R command-prompt -I '#S' 'rename "%1"'
+bind Tab popup -h '100%' -w '100%' -E 'fztmuxselectw'
+bind / copy-mode
+
+bind -T copy-mode q send -X cancel
+bind -T copy-mode j send -X page-down
+bind -T copy-mode k send -X page-up
+bind -T copy-mode J send -X history-bottom
+bind -T copy-mode K send -X history-top
+bind -T copy-mode / send -X search-forward
+bind -T copy-mode ? send -X search-backward
+bind -T copy-mode n send -X search-again
+bind -T copy-mode N send -X search-reverse
