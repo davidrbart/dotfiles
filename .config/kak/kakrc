@@ -1,0 +1,117 @@
+add-highlighter global/ number-lines -hlcursor -min-digits 4 -relative
+add-highlighter global/ show-whitespaces
+
+set-option global ui_options terminal_assistant=none
+set-option -add global ui_options terminal_enable_mouse=no
+set-option -add global ui_options terminal_padding_char=
+set-option -add global ui_options terminal_set_title=no
+set-option -add global ui_options terminal_status_on_top=yes
+
+set-option global indentwidth 4
+set-option global modelinefmt '{{context_info}} {{mode_info}} %val{cursor_line}:%val{cursor_char_column} %val{bufname} %val{session}'
+set-option global scrolloff 1,10
+set-option global tabstop 4
+
+unmap global normal <down>
+unmap global normal <end>
+unmap global normal <home>
+unmap global normal <left>
+unmap global normal <right>
+unmap global normal <s-down>
+unmap global normal <s-end>
+unmap global normal <s-home>
+unmap global normal <s-left>
+unmap global normal <s-right>
+unmap global normal <s-up>
+unmap global normal <up>
+
+map global normal <a-n> ']pj;'
+map global normal <a-p> '[p;'
+map global normal <a-N> <pagedown>
+map global normal <a-P> <pageup>
+map global normal </> '</>(?i)'
+map global normal <a-/> '<a-/>(?i)'
+map global normal <tab> ':buffer-next<ret>'
+map global normal <s-tab> ':buffer-previous<ret>'
+map global insert <a-h> <esc>hi
+map global insert <a-j> <esc>ji
+map global insert <a-k> <esc>ki
+map global insert <a-l> <esc>li
+map global insert <a-d> <esc>di
+
+map global user <a> '*%s<ret>' -docstring 'select all'
+map global user <b> ':fzf-select<ret>' -docstring 'select buffer'
+map global user <d> ':delete-buffer<ret>' -docstring 'delete buffer'
+map global user <D> ':fzf-delete<ret>' -docstring 'delete multiple buffers'
+map global user <e> ':fzf-edit<ret>' -docstring 'edit file'
+map global user <q> ':write-all-quit<ret>' -docstring 'write all & quit'
+map global user <w> ':write-all<ret>' -docstring 'write all'
+map global user </> ':comment-line<ret>' -docstring 'comment lines'
+
+# commands
+define-command suspend-and-resume -params 1 -docstring 'suspends editor and runs command' %{
+    evaluate-commands %sh{
+        nohup sh -c "sleep 0.2; xdotool type '$1 && fg'; xdotool key Return" > /dev/null 2>&1 &
+        kill -SIGTSTP $kak_client_pid
+    }
+}
+define-command fzf-edit -params 0 -docstring 'edit file' %{
+    evaluate-commands %sh{
+        [ -z $kak_client_env_TMUX ] && printf '%s\n' 'fail "Client not started under tmux!"'
+        file=$(find . -type f | fzf-tmux -u)
+        [ -z $file ] && { printf '%s\n' 'fail "File not selected!"'; exit; }
+        printf '%s\n' "edit $file"
+    }
+}
+define-command fzf-select -params 0 -docstring 'select buffer' %{
+    evaluate-commands %sh{
+        [ -z $kak_client_env_TMUX ] && printf '%s\n' 'fail "Client not started under tmux!"'
+        buffer=$(printf '%s\n' $kak_buflist | tr ' ' '\n' | fzf-tmux -u)
+        [ -z $buffer ] && { printf '%s\n' 'fail "Buffer not selected!"'; exit; }
+        printf '%s\n' "buffer $buffer"
+    }
+}
+define-command fzf-delete -params 0 -docstring 'delete multiple buffers' %{
+    evaluate-commands %sh{
+        [ -z $kak_client_env_TMUX ] && printf '%s\n' 'fail "Client not started under tmux!"'
+        buffers=$(printf '%s\n' $kak_buflist | tr ' ' '\n' | fzf-tmux -m -u)
+        [ -z $buffers ] && { printf '%s\n' 'fail "Buffers not selected!"'; exit; }
+        for buffer in $buffers; do
+            printf '%s\n' "delete-buffer $buffer"
+        done
+    }
+}
+
+# tab completions
+hook global InsertCompletionShow .* %{
+    map window insert <tab> '<c-n>'
+    map window insert <s-tab> '<c-p>'
+}
+hook global InsertCompletionHide .* %{
+    unmap window insert <tab> '<c-n>'
+    unmap window insert <s-tab> '<c-p>'
+}
+
+# format command
+hook global WinCreate .*\.(css|html|js|json|php) %{
+    set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile} --bracket-same-line --single-quote --singleQuote true --tab-width 4"
+    hook buffer BufWritePre .* %{
+        format
+    }
+}
+hook global WinCreate .*\.c %{
+    set-option buffer formatcmd "astyle --style=allman"
+    hook buffer BufWritePre .* %{
+        format
+    }
+}
+
+# auto tab expansion
+hook global BufOpenFile .* expandtab
+hook global BufNewFile .* expandtab
+hook global ModuleLoaded smarttab %{
+    set-option global softtabstop 4
+}
+
+# brace completion
+enable-auto-pairs

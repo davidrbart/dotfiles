@@ -54,10 +54,10 @@ XTerm*scrollBar: false
 XTerm*termName: xterm-256color
 XTerm*utf8: true
 
-xpdf*matteColor: base00
-xpdf*fullScreenMatteColor: base00
-xpdf*Foreground: base04
-xpdf*Background: base00
+xpdf*matteColor: base05
+xpdf*fullScreenMatteColor: base05
+xpdf*Foreground: base00
+xpdf*Background: base05
 xpdf*toolTipEnable: false
 
 VT100.Translations: #override <Key>F13: string(^[[25~)
