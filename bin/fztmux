@@ -1,0 +1,18 @@
+#/bin/sh
+
+# Xsession doesn't apply this properly!
+xmodmap $HOME/.config/x11/xmodmap
+
+options=$(printf '%s' 'desktop')
+case $options in 
+    'desktop')
+        tmux -f $HOME/.config/tmux/rc new -s 'desktop' -n 'system' top \; \
+            neww -n 'news' newsraft \; \
+            neww -n 'email' mutt \; \
+            neww -n 'ksh'
+    ;;
+    *)
+        printf '%s' 'Bad argument!\n'
+        exit 1
+    ;;
+esac

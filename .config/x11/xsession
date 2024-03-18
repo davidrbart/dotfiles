@@ -1,9 +1,9 @@
 #!/bin/sh
 
-xmodmap $HOME/.config/x11/xmodmap
 xrdb -merge $HOME/.config/x11/xresources
-xset b off
-xsetroot -solid '#d0d0d0'
 
-cwm -c $HOME/.config/cwm/rc &
-xbanish
+xbanish &
+xset b off &
+xsetroot -solid '#d0d0d0' &
+xterm $HOME/bin/fztmux &
+cwm -c $HOME/.config/cwm/rc
