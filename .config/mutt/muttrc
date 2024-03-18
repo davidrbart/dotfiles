@@ -21,36 +21,55 @@ set sleep_time              = 0
 set status_format           = '%f %u/%m'
 set status_on_top           = yes
 
-color attachment black white
-color bold black white
-color error black white
-color hdrdefault black white
-color header black white '.*'
-color indicator white black
-color normal black white
-color prompt black white
-color sidebar_divider black white
-color sidebar_flagged black white
-color sidebar_highlight white black
-color sidebar_indicator white black
-color sidebar_new black white
-color status black white
-color tilde black white
+color attachment default default
+color bold default default
+color compose header default default
+color error default default
+color hdrdefault default default
+color header default default '.*'
+color indicator reverse default default
+color normal default default
+color prompt default default
+color sidebar_divider default default
+color sidebar_flagged default default
+color sidebar_highlight reverse default default
+color sidebar_indicator reverse default default
+color sidebar_new default default
+color status default default
+color tilde default default
 
+bind attach e edit-type
 bind attach h exit
 bind attach l view-attach
+bind compose E edit-headers
+bind compose G last-entry
+bind compose J move-down
+bind compose K move-up
+bind compose M postpone-message
+bind compose d detach-file
+bind compose e edit-message
+bind compose g first-entry
+bind compose m send-message
+bind compose p print-entry
+bind compose r rename-file
+bind compose v view-attach
 bind generic G bottom-page
 bind generic N search-opposite
 bind generic g top-page
 bind generic h exit
 bind generic l select-entry
+bind index D purge-message
+bind index G last-entry
 bind index J sidebar-next
 bind index K sidebar-prev
 bind index L sidebar-open
+bind index e edit
+bind index g first-entry
 bind index l display-message
 bind index r reply
+bind pager D purge-message
 bind pager G bottom
-bind pager N search-opposite
+bind pager e edit
 bind pager g top
 bind pager h exit
 bind pager j next-page
@@ -59,6 +78,43 @@ bind pager q quit
 bind pager J next-line
 bind pager K previous-line
 
+bind compose <enter> noop
+bind compose <esc>f noop
+bind compose <esc>k noop
+bind compose <esc>v noop
+bind compose <keypadenter> noop
+bind compose <return> noop
+bind compose A noop
+bind compose C noop
+bind compose D noop
+bind compose F noop
+bind compose P noop
+bind compose R noop
+bind compose S noop
+bind compose T noop
+bind compose T noop
+bind compose U noop
+bind compose V noop
+bind compose \Cb noop
+bind compose \Cd noop
+bind compose \Ce noop
+bind compose \Cf noop
+bind compose \Co noop
+bind compose \Ct noop
+bind compose \Cxe noop
+bind compose b noop
+bind compose c noop
+bind compose f noop
+bind compose h noop
+bind compose l noop
+bind compose n noop
+bind compose i noop
+bind compose s noop
+bind compose t noop
+bind compose u noop
+bind compose w noop
+bind compose y noop
+bind compose | noop
 bind generic ! noop
 bind generic ';' noop
 bind generic * noop
@@ -130,9 +186,7 @@ bind index @ noop
 bind index A noop
 bind index B noop
 bind index C noop
-bind index D noop
 bind index F noop
-bind index G noop
 bind index N noop
 bind index O noop
 bind index P noop
@@ -156,8 +210,6 @@ bind index \CU noop
 bind index a noop
 bind index b noop
 bind index c noop
-bind index e noop
-bind index g noop
 bind index h noop
 bind index o noop
 bind index w noop
@@ -240,7 +292,6 @@ bind pager a noop
 bind pager b noop
 bind pager c noop
 bind pager d noop
-bind pager e noop
 bind pager i noop
 bind pager o noop
 bind pager w noop
