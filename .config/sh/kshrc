@@ -1,18 +1,11 @@
 #!/bin/ksh
 
-alias tmux='tmux -f $HOME/.config/tmux/rc new-session -AD -s desktop'
+alias tmux='tmux -f $HOME/.config/tmux/rc'
 alias xli='xli -fillscreen'
-alias ll='ls -A1F'
-alias lll='ls -ahlF'
 alias pls='doas $(fc -ln -1)'
 alias rsync='openrsync -a --rsync-path=/usr/bin/openrsync'
 
-alias ga='got add'
-alias gb='got branch'
-alias gl='got log | less'
-alias gm='got commit'
-alias gp='got send'
-alias gs='got status'
+alias ll='ls -ahlF'
 
 bind ^J=down-history
 bind ^K=up-history
