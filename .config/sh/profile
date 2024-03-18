@@ -13,7 +13,6 @@ export LANG=en_US.UTF-8
 export LESSKEY=$HOME/.local/share/lesskey
 export LYNX_CFG=$HOME/.config/lynx/lynx.cfg
 export LYNX_LSS=$HOME/.config/lynx/lynx.lss
-export MANPATH=:$HOME/man
 export PAGER=less
 export PASS_BASE_DIR=$HOME/pass/
 export PASS_PRIVATE_KEY=$HOME/pass/key
