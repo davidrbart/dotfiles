@@ -1,10 +1,13 @@
-source $HOME/.config/mutt/mail
+source $HOME/data/mutt/aliases
+source $HOME/data/mutt/mail
 
 alternative_order text/plain text/enriched text/html auto_view text/html
 
 set abort_nosubject         = yes
+set alias_file              = $HOME/data/mutt/aliases
 set attach_save_dir         = $HOME/temp/
 set beep                    = no
+set charset                 = 'utf-8'
 set date_format             = '%d.%m %H:%M'
 set header_cache            = $HOME/.cache/mutt/
 set help                    = no
@@ -38,6 +41,8 @@ color sidebar_new default default
 color status default default
 color tilde default default
 
+bind alias g first-entry
+bind alias G last-entry
 bind attach e edit-type
 bind attach h exit
 bind attach l view-attach
@@ -58,6 +63,7 @@ bind generic N search-opposite
 bind generic g top-page
 bind generic h exit
 bind generic l select-entry
+bind generic = error-history
 bind index D purge-message
 bind index G last-entry
 bind index J sidebar-next
@@ -78,6 +84,7 @@ bind pager q quit
 bind pager J next-line
 bind pager K previous-line
 
+bind alias <space> noop
 bind compose <enter> noop
 bind compose <esc>f noop
 bind compose <esc>k noop
@@ -140,7 +147,6 @@ bind generic <pageup> noop
 bind generic <return> noop
 bind generic <right> noop
 bind generic <up> noop
-bind generic = noop
 bind generic > noop
 bind generic H noop
 bind generic L noop
