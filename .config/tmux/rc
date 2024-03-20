@@ -20,28 +20,49 @@ set -g status-interval 1
 set -g status-position top
 set -g status-right '%H:%M'
 set -g status-style 'fg=default,bg=default'
+set -g mode-style 'fg=default,bg=default,reverse'
+set -g copy-mode-mark-style 'fg=default,bg=default,reverse'
+set -g copy-mode-match-style 'fg=default,bg=default,underscore'
+set -g copy-mode-current-match-style 'fg=default,bg=default,reverse'
 
 unbind -a
 unbind -a -T root
 unbind -a -T copy-mode
 unbind -a -T copy-mode-vi
 
-bind F1 source $HOME/.config/tmux/rc
+bind -T root < if -F "#{==:#{pane_mode},tree-mode}" "display '< is disabled!'" "send <"
+bind -T root > if -F "#{==:#{pane_mode},tree-mode}" "display '> is disabled!'" "send >"
+bind -T root C-s if -F "#{==:#{pane_mode},tree-mode}" "display 'C-s is disabled!'" "send C-s"
+bind -T root C-t if -F "#{==:#{pane_mode},tree-mode}" "display 'C-t is disabled!'" "send C-t"
+bind -T root O if -F "#{==:#{pane_mode},tree-mode}" "display 'O is disabled!'" "send O"
+bind -T root X if -F "#{==:#{pane_mode},tree-mode}" "display 'X is disabled!'" "send X"
+bind -T root down if -F "#{==:#{pane_mode},tree-mode}" "display 'down is disabled!'" "send enter"
+bind -T root enter if -F "#{==:#{pane_mode},tree-mode}" "display 'enter is disabled!'" "send enter"
+bind -T root r if -F "#{==:#{pane_mode},tree-mode}" "display 'r is disabled!'" "send r"
+bind -T root up if -F "#{==:#{pane_mode},tree-mode}" "display 'up is disabled!'" "send enter"
+bind -T root v if -F "#{==:#{pane_mode},tree-mode}" "display 'v is disabled!'" "send v"
+bind -T root x if -F "#{==:#{pane_mode},tree-mode}" "display 'x is disabled!'" "send x"
+
+bind -T root / if -F "#{==:#{pane_mode},tree-mode}" "send C-s'" "send /"
+bind -T root D if -F "#{==:#{pane_mode},tree-mode}" "send X'" "send D"
+bind -T root d if -F "#{==:#{pane_mode},tree-mode}" "send x'" "send d"
+bind -T root l if -F "#{==:#{pane_mode},tree-mode}" "send enter'" "send l"
+
+bind F1 choose-tree -N
 bind C-Space send-prefix -2
 bind Space rotatew
 bind : command-prompt
 bind ? lsk
 bind A splitw -h
 bind a neww
-bind q killp
+bind d killp
 bind h selectp -L
 bind j next
 bind k prev
 bind l selectp -R
 bind r command-prompt -I '#W' 'renamew "%1"'
 bind R command-prompt -I '#S' 'rename "%1"'
-bind Tab popup -h '100%' -w '100%' -E 'fztmuxselectw'
-bind / copy-mode
+bind y copy-mode
 
 bind -T copy-mode q send -X cancel
 bind -T copy-mode j send -X page-down
