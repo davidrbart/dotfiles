@@ -73,6 +73,7 @@ bind index e edit
 bind index g first-entry
 bind index l display-message
 bind index r reply
+bind index s sync-mailbox
 bind pager D purge-message
 bind pager G bottom
 bind pager e edit
@@ -80,6 +81,7 @@ bind pager g top
 bind pager h exit
 bind pager j next-page
 bind pager k previous-page
+bind pager s sync-mailbox
 bind pager q quit
 bind pager J next-line
 bind pager K previous-line
