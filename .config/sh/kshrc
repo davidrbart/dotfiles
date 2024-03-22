@@ -3,9 +3,21 @@
 alias tmux='tmux -f $HOME/.config/tmux/rc'
 alias xli='xli -fillscreen'
 alias pls='doas $(fc -ln -1)'
+alias rm='trash'
 alias rsync='openrsync -a --rsync-path=/usr/bin/openrsync'
 
 alias ll='ls -ahlF'
+
+alias ga='got stage'
+alias gaa='got add -R'
+alias gc='got clone'
+alias gd='got diff -C 0 -w'
+alias gf='got fetch -adt'
+alias gm='got commit'
+alias gp='got send'
+alias grr='got unstage'
+alias grr='got remove -fR'
+alias gs='got status'
 
 bind ^J=down-history
 bind ^K=up-history
