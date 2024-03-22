@@ -1,4 +1,10 @@
+.cache
 .dbus
+.local
 .pki
+.ssh
 .sndio
 .Xauthority
+code/
+mnt/
+temp/
