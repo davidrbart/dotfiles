@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+options=$(echo 'shutdown\nreboot' | fzf --disabled --bind=j:down --bind=k:up --bind=l:accept --bind=q:abort)
+case $options in
+    shutdown)
+        doas halt -p
+        ;;
+    reboot)
+        doas reboot
+        ;;
+esac
