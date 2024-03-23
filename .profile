@@ -9,6 +9,7 @@ export GOT_AUTHOR='David Bart <154410746+davidrbart@users.noreply.github.com>'
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILE=$HOME/.ksh-history
 export HISTSIZE=8192
+export KAKOUNE_CONFIG_DIR=$HOME/.kak/
 export LANG=en_US.UTF-8
 export LESSKEY=$HOME/.local/share/lesskey
 export LYNX_CFG=$HOME/.config/lynx/lynx.cfg
