@@ -6,6 +6,7 @@
 .pki
 .ssh
 .sndio
+.tmux-history
 .xsession-errors
 .Xauthority
 code/
