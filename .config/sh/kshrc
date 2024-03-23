@@ -1,6 +1,5 @@
 #!/bin/ksh
 
-alias tmux='tmux -f $HOME/.config/tmux/rc'
 alias xli='xli -fillscreen'
 alias pls='doas $(fc -ln -1)'
 alias rm='trash'
