@@ -6,4 +6,4 @@ xmodmap $HOME/.xmodmaprc
 xbanish &
 xset b off &
 xsetroot -solid '#d0d0d0' &
-cwm
+exec cwm
