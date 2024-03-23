@@ -1,6 +1,7 @@
 #!/bin/sh
 
-xrdb -merge $HOME/.config/x11/xresources
+xrdb -merge $HOME/.Xresources
+xmodmap $HOME/.xmodmaprc
 
 xbanish &
 xset b off &

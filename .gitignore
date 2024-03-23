@@ -5,6 +5,7 @@
 .pki
 .ssh
 .sndio
+.xsession-errors
 .Xauthority
 code/
 mnt/
