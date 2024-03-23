@@ -2,6 +2,8 @@
 .dbus
 .ksh-history
 .local
+.mutt
+.mutt-history
 .pass
 .pki
 .ssh
