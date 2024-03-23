@@ -1,6 +1,7 @@
 .cache
 .dbus
 .ksh-history
+.less
 .local
 .mutt
 .mutt-history

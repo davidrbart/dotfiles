@@ -11,7 +11,6 @@ export HISTFILE=$HOME/.ksh-history
 export HISTSIZE=8192
 export KAKOUNE_CONFIG_DIR=$HOME/.kak/
 export LANG=en_US.UTF-8
-export LESSKEY=$HOME/.local/share/lesskey
 export LYNX_CFG=$HOME/.config/lynx/lynx.cfg
 export LYNX_LSS=$HOME/.config/lynx/lynx.lss
 export PAGER=less
