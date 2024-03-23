@@ -1,6 +1,7 @@
 .cache
 .dbus
 .local
+.pass
 .pki
 .ssh
 .sndio
