@@ -40,8 +40,7 @@
 XTerm*allowBoldFonts: false
 XTerm*borderWidth: 0
 XTerm*cursorUnderLine: true
-XTerm*faceName: monospace
-XTerm*faceSize: 6
+Term*faceSize: 6
 XTerm*fullscreen: true
 XTerm*internalBorder: 16
 XTerm*locale: false

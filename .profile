@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export BROWSER=chrome
-export ENV=$HOME/.config/sh/kshrc
+export ENV=$HOME/.kshrc
 export FCEDIT=kak
 export FZF_DEFAULT_COMMAND="find . -not -path './*.*'"
 export FZF_DEFAULT_OPTS=$(tr '\n' ' ' < $HOME/.fzfrc)
