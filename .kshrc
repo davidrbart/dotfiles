@@ -1,5 +1,6 @@
 #!/bin/ksh
 
+alias ls='ls -1F'
 alias xli='xli -fillscreen'
 alias pls='doas $(fc -ln -1)'
 alias rm='trash'
