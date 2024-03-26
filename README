@@ -1,12 +1,13 @@
 # TLDR
 
-My dotfiles for my OpenBSD instance running on an old ThinkPad
+Dotfiles for my OpenBSD instance running on an old ThinkPad
 laptop. Also see my openbsd_setup repository on github.
 
 - cwm(1)(5)
 - fzf(1)
 - kak(1)oune
 - less(1)
+- lynx(1)
 - mutt(1)(5)
 - oksh(1)
 - tmux(1)
