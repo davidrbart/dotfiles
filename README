@@ -1,1 +1,24 @@
-Hello World
+# TLDR
+
+My dotfiles for my OpenBSD instance running on an old ThinkPad
+laptop. Also see my openbsd_setup repository on github.
+
+- cwm(1)(5)
+- fzf(1)
+- kak(1)oune
+- less(1)
+- mutt(1)(5)
+- oksh(1)
+- tmux(1)
+- x11 (xli(1), xpdf(1), xmodmap(1), xterm(1))
+
+The computing scientist’s main challenge is not to get confused by the
+complexities of his own making.
+
+    ~ E. W. Dijkstra
+
+Beauty is more important in computing than anywhere else in technology
+because software is so complicated. Beauty is the ultimate defence against
+complexity.
+
+    ~ David Gelernter
